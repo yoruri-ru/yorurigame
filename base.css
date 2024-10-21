@@ -1,11 +1,13 @@
 h1 {
   color: #0000aa;
+  padding: 130px 0px;
+  height: 500px;
 }
 
 header {
   display: flex;
   width: 100%;
-  height: 100px;
+  height: 80px;
   background-color: darkgrey;
   align-items: center;
   position: fixed;
