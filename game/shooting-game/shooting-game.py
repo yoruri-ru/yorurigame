@@ -5,7 +5,7 @@ class App:
         pyxel.init(100, 100)
 
         # リソースファイルの読み込み
-        pyxel.load("sample.pyxres")
+        pyxel.load("shooting-game.pyxres")
         
     def run(self):
         pyxel.run(self.update, self.draw)
