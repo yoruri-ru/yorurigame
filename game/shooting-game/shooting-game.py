@@ -4,7 +4,7 @@ pyxel.init(160,128)
 pyxel.load("shooting-game.pyxres")
 
 x = 0
-y = 50
+y = 100
 def update():
     global x,y,dx
     if pyxel.btn(pyxel.KEY_LEFT):
