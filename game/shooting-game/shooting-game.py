@@ -20,7 +20,7 @@ def update():
 
 def draw():
     pyxel.cls(1)
-    pyxel.blt( x,y, 0, 0,0, 16,16, 0)
+    pyxel.blt( x,y, 0, 0,0, 8,8, 0)
     return
 
 pyxel.run(update,draw)
