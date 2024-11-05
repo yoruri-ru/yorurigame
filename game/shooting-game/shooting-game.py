@@ -1,26 +1,17 @@
 import pyxel
 
-pyxel.init(160,128)
-pyxel.load("shooting-game.pyxres")
+class App:
+    
+    def __init__(self):
+        pyxel.init(240, 160, title="Pyxel Shooter r")
+        pyxel.load("shooting-game.pyxres")
+        pyxel.run(self.update, self.draw)
 
-x = 0
-y = 100
-def update():
-    global x,y,dx
-    if pyxel.btn(pyxel.KEY_LEFT):
-        dx = -2
-    elif pyxel.btn(pyxel.KEY_RIGHT):
-        dx = 2
-    else:
-        dx = 0
+    def update(self):
+        return
 
-    # 横方向の移動
-    x = x + dx
-    return
+    def draw(self):
+        pyxel.cls(0)
+        return
 
-def draw():
-    pyxel.cls(1)
-    pyxel.blt( x,y, 0, 0,0, 8,8, 0)
-    return
-
-pyxel.run(update,draw)
+App()
