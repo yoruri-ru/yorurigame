@@ -1,4 +1,5 @@
 import pyxel
+import random
 
 COM_HAND = 0
 PLAYER_HAND = 0
@@ -18,7 +19,9 @@ class App:
             PLAYER_HAND = 1
         if pyxel.btn(pyxel.KEY_D):
             PLAYER_HAND = 2
-        COM_HAND = int(pyxel.frame_count / 5) % 3
+        if pyxel.btnp(pyxel.KEY_SPACE):
+            COM_HAND = random.randint(0,2)
+        
         return
         
     def draw(self):
@@ -30,7 +33,7 @@ class App:
 
         #PLAYER
         pyxel.text(4,32, "YOU",7)
-        pyxel.blt(16,32, 0,  PLAYER_HAND * 16,0, 16,16, 0)
+        pyxel.blt(32,32, 0,  PLAYER_HAND * 16,0, 16,16, 0)
         
         return
 
