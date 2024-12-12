@@ -5,7 +5,7 @@ COM_HAND = 0
 class App:
     
     def __init__(self):
-        pyxel.init(80, 64, title="Pyxel Shooter r", fps="25")
+        pyxel.init(80, 64, title="Pyxel Shooter r", fps=25)
         pyxel.load("zyanken.pyxres")
         pyxel.mouse(True)
         pyxel.run(self.update, self.draw)
