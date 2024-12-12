@@ -21,7 +21,8 @@ class App:
             PLAYER_HAND = 2
         if pyxel.btnp(pyxel.KEY_SPACE):
             COM_HAND = random.randint(0,2)
-        
+        if pyxel.btn(pyxel.KEY_W):
+            pyxel.playm(0, loop=True)
         return
         
     def draw(self):
