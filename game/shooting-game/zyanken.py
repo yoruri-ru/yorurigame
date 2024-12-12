@@ -1,20 +1,23 @@
 import pyxel
 
 COM_HAND = 0
+PLAYER_HAND = 0
 
 class App:
     
     def __init__(self):
-        pyxel.init(80, 64, title="Pyxel Shooter r", fps=25)
+        pyxel.init(80, 64, title="zyanken", fps=25)
         pyxel.load("zyanken.pyxres")
-        pyxel.mouse(True)
         pyxel.run(self.update, self.draw)
 
-    def com_hand(self):
-        return
-
     def update(self):
-        global COM_HAND
+        global COM_HAND, PLAYER_HAND
+        if pyxel.btn(pyxel.KEY_S):
+            PLAYER_HAND = 0
+        if pyxel.btn(pyxel.KEY_A):
+            PLAYER_HAND = 1
+        if pyxel.btn(pyxel.KEY_D):
+            PLAYER_HAND = 2
         COM_HAND = int(pyxel.frame_count / 5) % 3
         return
         
@@ -27,9 +30,7 @@ class App:
 
         #PLAYER
         pyxel.text(4,32, "YOU",7)
-        pyxel.blt(16,32, 0,  0,0, 16,16, 0)
-        pyxel.blt(32,32, 0, 16,0, 16,16, 0)
-        pyxel.blt(48,32, 0, 32,0, 16,16, 0)
+        pyxel.blt(16,32, 0,  PLAYER_HAND * 16,0, 16,16, 0)
         
         return
 
