@@ -5,7 +5,7 @@ COM_HAND = 0
 class App:
     
     def __init__(self):
-        pyxel.init(80, 64, title="Pyxel Shooter r" fps="25")
+        pyxel.init(80, 64, title="Pyxel Shooter r", fps="25")
         pyxel.load("zyanken.pyxres")
         pyxel.mouse(True)
         pyxel.run(self.update, self.draw)
@@ -14,8 +14,8 @@ class App:
         return
 
     def update(self):
-        global com_hand
-        com_hand = int(pyxel.frame_count / 5) % 3
+        global COM_HAND
+        COM_HAND = int(pyxel.frame_count / 5) % 3
         return
         
     def draw(self):
@@ -23,7 +23,7 @@ class App:
 
         #COM
         pyxel.text(4,10, "COM",7)
-        pyxel.blt(32,10, 0, com_hand * 16,0, 16,16,0)
+        pyxel.blt(32,10, 0, COM_HAND * 16,0, 16,16,0)
 
         #PLAYER
         pyxel.text(4,32, "YOU",7)
