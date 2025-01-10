@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ぐぐ</title>
+  </head>
+  <body>
+   <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyD6FXKrEusqgVS1BJhOr1EX9TvdPSWqdro",
+    authDomain: "black-jack-1309b.firebaseapp.com",
+    projectId: "black-jack-1309b",
+    storageBucket: "black-jack-1309b.firebasestorage.app",
+    messagingSenderId: "548683201931",
+    appId: "1:548683201931:web:83205120020f2a648e838e",
+    measurementId: "G-JXWL3H281X"
+  };
+
+  // Initialize Firebase
+  var app = initializeApp(firebaseConfig);
+  var analytics = getAnalytics(app);
+  var db = firebase.firestore(app);
+
+        function onClick() {
+            db.collection("test").add({
+                hoge: "てすと",
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            });
+        };  
+</script>
+    <button onclick="onClick()">書き込みテスト</button>
+  </body>
+</html>
